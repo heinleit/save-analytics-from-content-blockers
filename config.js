@@ -61,7 +61,8 @@ export default {
             "ib.adnxs.com",
             "idsync.rlcdn.com",
             "us-u.openx.net",
-            "cm.g.doubleclick.net"
+            "cm.g.doubleclick.net",
+            "region1.google-analytics.com"
         ],
         specialContentReplace: { // Special regex rules for domains
             "www.googletagmanager.com": [
@@ -85,11 +86,16 @@ export default {
             "www.google-analytics.com": {
                 urlMatch: /\/collect/,
                 queryParameterName: ["uip", "_uip"]
+            },
+            "region1.google-analytics.com": {
+                urlMatch: /\/collect/,
+                queryParameterName: ["uip", "_uip"]
             }
         },
         maskPaths: [ // Paths which are masked in URLs and redirects in order to avoid firing ad-blocking rules
             "/google-analytics",
             "/www.google-analytics.com",
+            "/region1.google-analytics.com",
             "/adsbygoogle",
             "/gtag/js",
             "/googleads",
